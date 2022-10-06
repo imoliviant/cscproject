@@ -11,21 +11,21 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
   <body>
-    <input id="amount1" type="number" size="10" placeholder="amount" min="1"><br>
+    number of nft less then 6:<br><input id="amount1" type="number" size="10" placeholder="amount" min="1"><br>
     <button onclick="mintCSC()" class="button button1">Mint</button><br><br>
     <div id="lang1"></div>
     <button onclick="supplyCSC()" class="button button1">Check current supply</button>
     <p></p>
     <div id="lang2"></div> / 100<br>
     
-    <input id="tokenId2" type="text" size="10" placeholder="tokenId e.g. 1"><br>
+    view your nft and write the token id of nft you hold to approve it and send it to staking contract:<br><input id="tokenId2" type="text" size="10" placeholder="tokenId e.g. 1"><br>
     <button onclick="approveCSC()" class="button button1">Approve NFT</button>
     <div id="lang3"></div>
     <div id="lang4"></div>
-    <input type="text" id="tokenIdA" size="10" placeholder="tokenId e.g. 1"><br>
+    write down the same nft token id which you have approved or go and approve it before staking:<br><input type="text" id="tokenIdA" size="10" placeholder="tokenId e.g. 1"><br>
     <button onclick="stakeCSC()" class="button button1">Stake NFT</button>
     <div id="lang5"></div>
-    <input type="text" id="tokenId3" size="10" placeholder="tokenId e.g. 1"><br>
+    check how much tokens did you earned by staking nft, input token id to fetch proportional reward generated:<br><input type="text" id="tokenId3" size="10" placeholder="tokenId e.g. 1"><br>
     <button onclick="calculateReward()" class="button button1">Check reward</button><br><br>
     <input type="text" id="tokenId4" size="10" placeholder="tokenId e.g. 1"><br>
     <div id="lang6"></div>

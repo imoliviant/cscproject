@@ -319,4 +319,4 @@ var contractCSCStake = new web3.eth.Contract(
 		"stateMutability": "nonpayable",
 		"type": "function"
 	}
-], "0x309c5351cDd8E6a889a485A095Bc6f27F1B0cdA4");
+], "0x50BD9E5D2A691C022fad70d4d21621dFECF48b7F");

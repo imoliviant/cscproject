@@ -75,7 +75,7 @@ function calculateReward() {
     var tokenId3 = $("#tokenId3").val();
     var event = contractCSCStake.methods.calculateTokens(tokenId3).call()
         .then(function (result) {
-    var content = "TOKENS amount: ";
+    var content = "USDT amount: ";
             //alert(result/100000000);
     content += JSON.stringify(result.toString()/1000000000000000000);
     $("#lang5").html(content);

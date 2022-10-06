@@ -23,6 +23,23 @@ function supplyCSC() {
     $("#lang2").html(content);
     });
 };
+function wallet() {
+    var content = "";
+        var event = contractCSC.methods.balanceOf(cscChef).call({ from: cscChef })
+        .then(function (result) {
+    balance = result;
+    for(var i = 0; i < balance; i++){
+    var event = contractCSC.methods.tokenOfOwnerByIndex(cscChef, i).call({ from: cscChef })
+        .then(function (result) {
+    var event = contractCSC.methods.tokenURI(Number(result)).call()
+        .then(function (result1) {
+    content += "<br><br>Id: " + result;
+    $("#lang7").html(content);
+    });
+    });
+    };
+    });
+};
 // for approving csc testnet nfts
 function approveCSC() {
     var tokenId2 = $("#tokenId2").val();

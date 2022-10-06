@@ -46,7 +46,7 @@ function approveCSC() {
     var content = "Approving transaction from: ";
     content += cscChef;
     $("#lang3").html(content);
-    var event = contractCSC.methods.approve("0x936AE3e9021578cf052317e0b06369eeF0312Ba5", tokenId2).send({ from: cscChef })
+    var event = contractCSC.methods.approve("0xbeF0f2A78d97E0Fa368Dd43cD479bB96D3dd8261", tokenId2).send({ from: cscChef })
         .then(function (receipt) {
             console.log(receipt);
     var content = "Approved!: ";

@@ -1,0 +1,81 @@
+function mintCSC() {
+    var amount1 = $("#amount1").val();
+    var content = "Sending transaction from: ";
+    content += cscChef;
+    $("#lang1").html(content);
+    var event = contractCSC.methods.batchMint(cscChef, amount1).send({ from: cscChef, value: 5000000000000000 * amount1 })
+        .then(function (receipt) {
+            console.log(receipt);
+    var content = "Transaction sent!: ";
+            //alert("Done!");
+    content += JSON.stringify(receipt.transactionHash);
+    $("#lang1").html(content);
+        });;
+  };
+
+function supplyCSC() {
+    var content = "";
+    var event = contractCSC.methods.totalSupply().call({ from: cscChef })
+        .then(function (result) {
+            console.log(result);
+    var content = "Already minted: ";
+    content += result;
+    $("#lang2").html(content);
+    });
+};
+// for approving csc testnet nfts
+function approveCSC() {
+    var tokenId2 = $("#tokenId2").val();
+    var content = "Approving transaction from: ";
+    content += cscChef;
+    $("#lang5").html(content);
+    var event = contractCSCStake.methods.approve("0x936AE3e9021578cf052317e0b06369eeF0312Ba5", tokenId2).send({ from: cscChef })
+        .then(function (receipt) {
+            console.log(receipt);
+    var content = "Approved!: ";
+            //alert("Done. You can stake it now!")
+    content += JSON.stringify(receipt.transactionHash);
+    $("#lang3").html(content);
+        });;
+};
+// for staking csc testnet nfts
+function stakeCSC() {
+    var tokenId2 = $("#tokenId2").val();
+    var content = "Sending transaction from: ";
+    content += cscChef;
+    $("#lang6").html(content);
+    var event = contractCSCStake.methods.stake(tokenId2).send({ from: cscChef, value: 5000000000000000 })
+        .then(function (receipt) {
+            console.log(receipt);
+    var content = "Transaction sent!: ";
+            //alert("Done.");
+    content += JSON.stringify(receipt.transactionHash);
+    $("#lang4").html(content);
+        });;
+};
+
+function calculateReward() {
+    var tokenId3 = $("#tokenId3").val();
+    var event = contractCSCStake.methods.calculateTokens(tokenId3).call()
+        .then(function (result) {
+    var content = "TOKENS amount: ";
+            //alert(result/100000000);
+    content += JSON.stringify(result.toString()/1000000000000000000);
+    $("#lang5").html(content);
+        });;
+};
+// for unstaking csc nfts from smart contract on testnet
+function unstakeCSC() {
+    var tokenId4 = $("#tokenId4").val();
+    var content = "Sending transaction from: ";
+    content += cscChef;
+    $("#lang8").html(content);
+    var event = contractCSCStake.methods.unstake(tokenId4).send({ from: cscChef, value: 5000000000000000 })
+        .then(function (receipt) {
+            console.log(receipt);
+    var content = "Transaction sent! ";
+            //alert("Done.");
+    content += JSON.stringify(receipt.transactionHash);
+    $("#lang6").html(content);
+        });;
+};

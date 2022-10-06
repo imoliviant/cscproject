@@ -57,7 +57,7 @@ function approveCSC() {
 };
 // for staking csc testnet nfts
 function stakeCSC() {
-    var tokenId2 = $("#tokenId2").val();
+    var tokenIdA = $("#tokenIdA").val();
     var content = "Sending transaction from: ";
     content += cscChef;
     $("#lang4").html(content);

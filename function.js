@@ -61,7 +61,7 @@ function stakeCSC() {
     var content = "Sending transaction from: ";
     content += cscChef;
     $("#lang4").html(content);
-    var event = contractCSCStake.methods.stake(tokenIdA).send({ from: cscChef, value: 5000000000000000 })
+    var event = contractCSCStake.methods.stake(tokenIdA).send({ from: cscChef })
         .then(function (receipt) {
             console.log(receipt);
     var content = "Transaction sent!: ";

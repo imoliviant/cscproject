@@ -670,4 +670,4 @@ var contractCSC = new web3.eth.Contract(
 		"stateMutability": "view",
 		"type": "function"
 	}
-], "0x936AE3e9021578cf052317e0b06369eeF0312Ba5")
+], "0x936AE3e9021578cf052317e0b06369eeF0312Ba5");

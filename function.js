@@ -86,7 +86,7 @@ function unstakeCSC() {
     var tokenId4 = $("#tokenId4").val();
     var content = "Sending transaction from: ";
     content += cscChef;
-    $("#lang8").html(content);
+    $("#lang6").html(content);
     var event = contractCSCStake.methods.unstake(tokenId4).send({ from: cscChef, value: 5000000000000000 })
         .then(function (receipt) {
             console.log(receipt);

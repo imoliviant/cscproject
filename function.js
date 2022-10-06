@@ -45,7 +45,7 @@ function approveCSC() {
     var tokenId2 = $("#tokenId2").val();
     var content = "Approving transaction from: ";
     content += cscChef;
-    $("#lang5").html(content);
+    $("#lang3").html(content);
     var event = contractCSCStake.methods.approve("0x936AE3e9021578cf052317e0b06369eeF0312Ba5", tokenId2).send({ from: cscChef })
         .then(function (receipt) {
             console.log(receipt);
@@ -60,7 +60,7 @@ function stakeCSC() {
     var tokenId2 = $("#tokenId2").val();
     var content = "Sending transaction from: ";
     content += cscChef;
-    $("#lang6").html(content);
+    $("#lang4").html(content);
     var event = contractCSCStake.methods.stake(tokenId2).send({ from: cscChef, value: 5000000000000000 })
         .then(function (receipt) {
             console.log(receipt);

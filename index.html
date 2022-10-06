@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>woops my idea</title>
+<meta charset="UTF-8">
+<meta name="description" content="a slowsly website for testing my ideas :)">
+<meta name="web" content="">
+<meta name="author" content="imoliviant">
+<link rel="icon" type="image/ico" sizes="32x32" href="">
+<script src="https://cdn.jsdelivr.net/npm/web3@1.8.0/dist/web3.min.js" integrity="sha256-1TLx50r3wQ52OlAm5jSfpTwbN9MJ51NysfLmsXmUPDk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+  <body>
+    <input id="amount1" type="number" size="10" placeholder="amount" min="1"><br>
+    <button onclick="mintCSC()" class="button button1">Mint</button><br><br>
+    <div id="lang1"></div>
+    <button onclick="supplyCSC()" class="button button1">Check current supply</button>
+    <p></p>
+    <div id="lang2"></div> / 100<br>
+    
+    <input id="tokenId2" type="text" size="10" placeholder="tokenId e.g. 1"><br>
+    <button onclick="approveCSC()" class="button button1">Approve NFT</button>
+    <div id="lang3"></div>
+    <div id="lang4"></div>
+    <input type="text" id="tokenIdA" size="10" placeholder="tokenId e.g. 1"><br>
+    <button onclick="stakeCSC()" class="button button1">Stake NFT</button>
+    <div id="lang5"></div>
+    <input type="text" id="tokenId3" size="10" placeholder="tokenId e.g. 1"><br>
+    <button onclick="calculateReward()" class="button button1">Check reward</button>
+    <input type="text" id="tokenId4" size="10" placeholder="tokenId e.g. 1"><br>
+    <div id="lang6"></div>
+    <button onclick="unstakeNFT()" class="button button1">Unstake NFT with reward</button>
+    <br>
+    
+    <script>
+    web3 = new Web3(window.ethereum);
+    ethereum.request({ method: 'eth_requestAccounts' });
+    var cscChef;
+    const getAccount = async () => {
+    try {
+    //const myAccounts = await web3.eth.getAccounts();
+    const myAccounts = await ethereum.request({ method: 'eth_accounts' });
+    cscChef = myAccounts[0];
+    console.log("Master account" + cscChef);
+    return myAccounts[0];
+    } catch (err) {
+          console.log(err);
+    }
+    }
+    //getAccount();
+    //web3.eth.defaultAccount = web3.eth.accounts[0];
+    getAccount();
+    ethereum.request({ method: 'eth_accounts' }).defaultAccount = ethereum.request({ method: 'eth_accounts' }).accounts[0];
+  </script>
+    
+    <script src="contractCSC.js"></script>
+    <script src="contractCSCStake.js"></script>
+    <script src="functions.js"></script>
+  </body>
+</html>

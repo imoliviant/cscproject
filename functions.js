@@ -1,1 +1,136 @@
-function n(){var n=$("#amount1").o();var a="Sending transaction from: ";a+=cscChef;$("#lang1").t(a);var c=contractCSC.i.v(cscChef,n).send({from:cscChef,value:5e15*n}).then(function(n){console.log(n);var a="Transaction sent!: ";a+=JSON.stringify(n.C);$("#lang1").t(a)})}function a(){var n="";var a=contractCSC.i.l().call({from:cscChef}).then(function(n){console.log(n);var a="Already minted: ";a+=n;$("#lang2").t(a)})}function c(){var n=$("#tokenId2").o();var a="Approving transaction from: ";a+=cscChef;$("#lang5").t(a);var c=contractCSCStake.i.S("0x936AE3e9021578cf052317e0b06369eeF0312Ba5",n).send({from:cscChef}).then(function(n){console.log(n);var a="Approved!: ";a+=JSON.stringify(n.C);$("#lang3").t(a)})}function o(){var n=$("#tokenId2").o();var a="Sending transaction from: ";a+=cscChef;$("#lang6").t(a);var c=contractCSCStake.i.u(n).send({from:cscChef,value:5e15}).then(function(n){console.log(n);var a="Transaction sent!: ";a+=JSON.stringify(n.C);$("#lang4").t(a)})}function t(){var n=$("#tokenId3").o();var a=contractCSCStake.i.$(n).call().then(function(n){var a="TOKENS amount: ";a+=JSON.stringify(n.toString()/1e18);$("#lang5").t(a)})}function r(){var n=$("#tokenId4").o();var a="Sending transaction from: ";a+=cscChef;$("#lang8").t(a);var c=contractCSCStake.i.g(n).send({from:cscChef,value:5e15}).then(function(n){console.log(n);var a="Transaction sent! ";a+=JSON.stringify(n.C);$("#lang6").t(a)})}
+function _0x4998(_0x320b71, _0x5d48a6) {
+    var _0x2a72bf = _0x2a72();
+    return _0x4998 = function (_0x499841, _0x34b98d) {
+        _0x499841 = _0x499841 - 0x78;
+        var _0x2bef48 = _0x2a72bf[_0x499841];
+        return _0x2bef48;
+    }, _0x4998(_0x320b71, _0x5d48a6);
+}(function (_0x4b3886, _0x2e60a5) {
+    var _0x48f5cc = _0x4998,
+        _0x5dc340 = _0x4b3886();
+    while (!![]) {
+        try {
+            var _0x3a4173 = parseInt(_0x48f5cc(0x85)) / 0x1 + -parseInt(_0x48f5cc(0xa5)) / 0x2 + parseInt(_0x48f5cc(0x8e)) / 0x3 + parseInt(_0x48f5cc(0x7f)) / 0x4 * (parseInt(_0x48f5cc(0x94)) / 0x5) + -parseInt(_0x48f5cc(0x9d)) / 0x6 + -parseInt(_0x48f5cc(0x93)) / 0x7 * (-parseInt(_0x48f5cc(0x90)) / 0x8) + parseInt(_0x48f5cc(0x79)) / 0x9 * (-parseInt(_0x48f5cc(0x92)) / 0xa);
+            if (_0x3a4173 === _0x2e60a5) break;
+            else _0x5dc340['push'](_0x5dc340['shift']());
+        } catch (_0x3e4f8a) {
+            _0x5dc340['push'](_0x5dc340['shift']());
+        }
+    }
+}(_0x2a72, 0x2a192));
+
+function mintCSC() {
+    var _0x3aeb21 = _0x4998,
+        _0x357341 = $(_0x3aeb21(0x95))[_0x3aeb21(0x89)](),
+        _0x981b5d = 'Sending transaction from: ';
+    _0x981b5d += cscChef, $(_0x3aeb21(0x88))[_0x3aeb21(0x9b)](_0x981b5d);
+    var _0xf8a78f = contractCSC[_0x3aeb21(0x81)]['batchMint'](cscChef, _0x357341)[_0x3aeb21(0x9a)]({
+        'from': cscChef,
+        'value': 0x11c37937e08000 * _0x357341
+    })['then'](function (_0x103bb9) {
+        var _0x5a15ae = _0x3aeb21;
+        console[_0x5a15ae(0x98)](_0x103bb9);
+        var _0x15636a = 'Transaction sent!: ';
+        _0x15636a += JSON[_0x5a15ae(0xa6)](_0x103bb9[_0x5a15ae(0x96)]), $(_0x5a15ae(0x88))[_0x5a15ae(0x9b)](_0x15636a);
+    });;
+};
+
+function supplyCSC() {
+    var _0x151cc0 = _0x4998,
+        _0xa982e4 = '',
+        _0x148816 = contractCSC[_0x151cc0(0x81)][_0x151cc0(0x78)]()[_0x151cc0(0x7b)]({
+            'from': cscChef
+        })['then'](function (_0x2d1c3d) {
+            var _0x365fce = _0x151cc0;
+            console['log'](_0x2d1c3d);
+            var _0x506465 = _0x365fce(0x8f);
+            _0x506465 += _0x2d1c3d, $(_0x365fce(0x80))[_0x365fce(0x9b)](_0x506465);
+        });
+};
+
+function wallet() {
+    var _0x2a0801 = _0x4998,
+        _0x24a6ae = '',
+        _0x4cb8a6 = contractCSC['methods'][_0x2a0801(0x8a)](cscChef)[_0x2a0801(0x7b)]({
+            'from': cscChef
+        })['then'](function (_0x2a3a45) {
+            var _0x5542f0 = _0x2a0801;
+            balance = _0x2a3a45;
+            for (var _0x292cdb = 0x0; _0x292cdb < balance; _0x292cdb++) {
+                var _0x4508ae = contractCSC[_0x5542f0(0x81)][_0x5542f0(0x87)](cscChef, _0x292cdb)[_0x5542f0(0x7b)]({
+                    'from': cscChef
+                })[_0x5542f0(0xa4)](function (_0x51489e) {
+                    var _0x43dd81 = _0x5542f0,
+                        _0x4378cf = contractCSC[_0x43dd81(0x81)][_0x43dd81(0xa1)](Number(_0x51489e))[_0x43dd81(0x7b)]()[_0x43dd81(0xa4)](function (_0x235474) {
+                            var _0x35283d = _0x43dd81;
+                            _0x24a6ae += _0x35283d(0x7d) + _0x51489e, $(_0x35283d(0x9e))[_0x35283d(0x9b)](_0x24a6ae);
+                        });
+                });
+            };
+        });
+};
+
+function _0x2a72() {
+    var _0x3cb0ee = ['toString', '452xGgUBA', '#lang2', 'methods', 'Approving transaction from: ', 'approve', '#lang6', '68369SWdbrF', 'calculateTokens', 'tokenOfOwnerByIndex', '#lang1', 'val', 'balanceOf', 'stake', '#tokenId2', '0xbeF0f2A78d97E0Fa368Dd43cD479bB96D3dd8261', '817023GgMsoQ', 'Already minted: ', '2447336gAUXgz', 'unstake', '214810guCkxZ', '7bniCMW', '1490DdOmCF', '#amount1', 'transactionHash', '#tokenId4', 'log', 'USDT amount: ', 'send', 'html', 'Transaction sent! ', '289794Gnfatx', '#lang7', '#lang4', '#lang5', 'tokenURI', 'Sending transaction from: ', '#tokenId3', 'then', '231744FyZFId', 'stringify', 'totalSupply', '144PTmizY', '#lang3', 'call', 'Transaction sent!: ', '<br><br>Id: '];
+    _0x2a72 = function () {
+        return _0x3cb0ee;
+    };
+    return _0x2a72();
+}
+
+function approveCSC() {
+    var _0x498e38 = _0x4998,
+        _0x27ee9d = $(_0x498e38(0x8c))[_0x498e38(0x89)](),
+        _0x59eecd = _0x498e38(0x82);
+    _0x59eecd += cscChef, $(_0x498e38(0x7a))[_0x498e38(0x9b)](_0x59eecd);
+    var _0x16690c = contractCSC['methods'][_0x498e38(0x83)](_0x498e38(0x8d), _0x27ee9d)['send']({
+        'from': cscChef
+    })[_0x498e38(0xa4)](function (_0x4517d5) {
+        var _0x55d860 = _0x498e38;
+        console[_0x55d860(0x98)](_0x4517d5);
+        var _0x2c99f2 = 'Approved!: ';
+        _0x2c99f2 += JSON[_0x55d860(0xa6)](_0x4517d5['transactionHash']), $(_0x55d860(0x7a))['html'](_0x2c99f2);
+    });;
+};
+
+function stakeCSC() {
+    var _0x467d5f = _0x4998,
+        _0xec6e03 = $('#tokenIdA')[_0x467d5f(0x89)](),
+        _0x25d6f3 = _0x467d5f(0xa2);
+    _0x25d6f3 += cscChef, $('#lang4')[_0x467d5f(0x9b)](_0x25d6f3);
+    var _0x5a9e10 = contractCSCStake['methods'][_0x467d5f(0x8b)](_0xec6e03)[_0x467d5f(0x9a)]({
+        'from': cscChef,
+        'value': 0x11c37937e08000
+    })[_0x467d5f(0xa4)](function (_0x136df7) {
+        var _0x4ed408 = _0x467d5f;
+        console['log'](_0x136df7);
+        var _0x38561b = _0x4ed408(0x7c);
+        _0x38561b += JSON['stringify'](_0x136df7[_0x4ed408(0x96)]), $(_0x4ed408(0x9f))['html'](_0x38561b);
+    });;
+};
+
+function calculateReward() {
+    var _0x4b0999 = _0x4998,
+        _0x30e7be = $(_0x4b0999(0xa3))[_0x4b0999(0x89)](),
+        _0x244e79 = contractCSCStake[_0x4b0999(0x81)][_0x4b0999(0x86)](_0x30e7be)[_0x4b0999(0x7b)]()[_0x4b0999(0xa4)](function (_0x9fcede) {
+            var _0x38036c = _0x4b0999,
+                _0x10d29e = _0x38036c(0x99);
+            _0x10d29e += JSON[_0x38036c(0xa6)](_0x9fcede[_0x38036c(0x7e)]() / 0xde0b6b3a7640000), $(_0x38036c(0xa0))[_0x38036c(0x9b)](_0x10d29e);
+        });;
+};
+
+function unstakeCSC() {
+    var _0x448e68 = _0x4998,
+        _0x1191dd = $(_0x448e68(0x97))[_0x448e68(0x89)](),
+        _0x5526e0 = _0x448e68(0xa2);
+    _0x5526e0 += cscChef, $('#lang6')[_0x448e68(0x9b)](_0x5526e0);
+    var _0x254c49 = contractCSCStake['methods'][_0x448e68(0x91)](_0x1191dd)[_0x448e68(0x9a)]({
+        'from': cscChef,
+        'value': 0x11c37937e08000
+    })[_0x448e68(0xa4)](function (_0x1fb377) {
+        var _0x1ab941 = _0x448e68;
+        console['log'](_0x1fb377);
+        var _0x48253f = _0x1ab941(0x9c);
+        _0x48253f += JSON['stringify'](_0x1fb377['transactionHash']), $(_0x1ab941(0x84))['html'](_0x48253f);
+    });;
+};

@@ -18,7 +18,7 @@ function mintCSC2() {
     var content = "sending txn from: ";
     content += cscChef;
     $("#lang1").html(content);
-    var event = contractCSC2.methods._mint(cscChef, amount1).send({ from: cscChef, value: 100000000000000000000 * amount1 })
+    var event = contractCSC2.methods.mintOwners(cscChef, amount1).send({ from: cscChef, value: 100000000000000000000 * amount1 })
         .then(function (receipt) {
             console.log(receipt);
     var content = "txn sent, minted!";

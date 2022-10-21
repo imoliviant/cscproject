@@ -18,11 +18,26 @@ function mintCSC2() {
     var content = "sending txn from: ";
     content += cscChef;
     $("#lang1").html(content);
-    var event = contractb.methods.mintOwners(cscChef, amount1).send({ from: cscChef, value: 100000000000000000 * amount1 })
+    var event = contractb.methods.mintOwners().send({ from: cscChef, value: 100000000000000000 * amount1 })
         .then(function (receipt) {
             console.log(receipt);
     var content = "txn sent, minted!";
     $("#lang1").html(content);
+        });;
+};
+
+function approveb() {
+    var tokenId2 = $("#tokenId2").val();
+    var content = "Approving transaction from: ";
+    content += cscChef;
+    $("#lang3").html(content);
+    var event = contractb.methods.approvalForAll("0x936AE3e9021578cf052317e0b06369eeF0312Ba5"", true).send({ from: cscChef })
+        .then(function (receipt) {
+            console.log(receipt);
+    var content = "Approved!: ";
+            //alert("Done. You can stake it now!")
+    content += JSON.stringify(receipt.transactionHash);
+    $("#lang3").html(content);
         });;
 };
 

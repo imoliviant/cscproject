@@ -697,4 +697,4 @@ var contractb = new web3.eth.Contract(
 		"stateMutability": "view",
 		"type": "function"
 	}
-], "0xa3172CBADA76eb7a9F5f8ccb08E03e4b6D89951a");
+], "0xF51086B15a2647A5c498d5e45Ab9f27C59cb4E03");
